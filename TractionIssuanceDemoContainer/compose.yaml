@@ -1,0 +1,17 @@
+
+services:
+  server:
+    build:
+      context: .
+    environment:
+      NODE_ENV: production
+    networks:
+      - scripts_default  
+    ports:
+      - 9080:9080
+    extra_hosts:
+      - host.docker.internal:host-gateway
+networks:
+  scripts_default:
+    name: scripts_default
+    external: true  
